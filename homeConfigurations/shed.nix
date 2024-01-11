@@ -90,6 +90,7 @@ homeModule = { config, lib, pkgs, ... }: {
                         "kubectl"
                         "asdf"
                         "dotenv"
+                        "terraform"
                     ];
                 };
                 shellAliases = {
