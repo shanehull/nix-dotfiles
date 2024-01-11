@@ -34,9 +34,6 @@ darwinModule = { config, lib, pkgs, ... }: {
         users = {
             users.shane.home = "/Users/shane";
         };
-        fonts.fonts = [
-            (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
-        ];
         system = {
             stateVersion = 4;
             defaults = {
@@ -51,9 +48,7 @@ darwinModule = { config, lib, pkgs, ... }: {
         homebrew = {
             enable = true;
             onActivation.autoUpdate = true;
-            casks = [
-                "multipass"
-            ];
+            casks = [ "warp" "multipass" ];
         };
     };
 };

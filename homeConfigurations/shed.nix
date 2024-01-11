@@ -2,34 +2,38 @@
 let
 homeModule = { config, lib, pkgs, ... }: {
     config = {
+	    manual.manpages.enable = false;
+        fonts.fontconfig.enable = true;
         home = {
             stateVersion = "23.11";
             packages = [
+                pkgs.fontconfig
+                (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
                 pkgs.git
-                    pkgs.bat
-                    pkgs.eza
-                    pkgs.fzf
-                    pkgs.zsh
-                    pkgs.zsh-syntax-highlighting
-                    pkgs.zsh-autosuggestions
-                    pkgs.zsh-powerlevel10k
-                    pkgs.thefuck
-                    pkgs.warp-terminal
-                    pkgs.neovim
-                    pkgs.wrangler
-                    pkgs.fd
-                    pkgs.ripgrep
-                    pkgs.jq
-                    pkgs.yq
-                    pkgs.kubectl
-                    pkgs.wget
-                    pkgs.hugo
-                    pkgs.gnupg
-                    pkgs.gawk
-                    # asdf manages tooling versions via ./.tool-versions
-                    # we do not install any langs here
-                    pkgs.asdf-vm        
-                ];
+                pkgs.bat
+                pkgs.eza
+                pkgs.fzf
+                pkgs.zsh
+                pkgs.zsh-syntax-highlighting
+                pkgs.zsh-autosuggestions
+                pkgs.zsh-powerlevel10k
+                pkgs.thefuck
+                pkgs.warp-terminal
+                pkgs.neovim
+                pkgs.wrangler
+                pkgs.fd
+                pkgs.ripgrep
+                pkgs.jq
+                pkgs.yq
+                pkgs.kubectl
+                pkgs.wget
+                pkgs.hugo
+                pkgs.gnupg
+                pkgs.gawk
+                # asdf manages tooling versions via ./.tool-versions
+                # we do not install any langs here
+                pkgs.asdf-vm        
+            ];
         };
         programs = {
             home-manager = { 
@@ -71,7 +75,6 @@ homeModule = { config, lib, pkgs, ... }: {
                     . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
 
                     # homebrew path
-                    #export PATH="/opt/homebrew/bin:$PATH"
                     eval "$(/opt/homebrew/bin/brew shellenv)"
                     '';
                 plugins = [
