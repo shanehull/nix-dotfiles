@@ -32,7 +32,8 @@ homeModule = { config, lib, pkgs, ... }: {
                 pkgs.gawk
                 # asdf manages tooling versions via ./.tool-versions
                 # we do not install any langs here
-                pkgs.asdf-vm        
+                pkgs.asdf-vm
+                pkgs.stylua
             ];
         };
         programs = {
