@@ -26,6 +26,8 @@ homeModule = { config, lib, pkgs, ... }: {
                 pkgs.jq
                 pkgs.yq
                 pkgs.kubectl
+                pkgs.k9s
+                pkgs.terraform
                 pkgs.wget
                 pkgs.hugo
                 pkgs.gnupg
