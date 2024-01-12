@@ -30,6 +30,7 @@ homeModule = { config, lib, pkgs, ... }: {
                 pkgs.terraform
                 pkgs.wget
                 pkgs.hugo
+                pkgs.golangci-lint
                 pkgs.gnupg
                 pkgs.gawk
                 # asdf manages tooling versions via ./.tool-versions
@@ -79,6 +80,9 @@ homeModule = { config, lib, pkgs, ... }: {
 
                     # homebrew path
                     eval "$(/opt/homebrew/bin/brew shellenv)"
+
+                    # go path
+                    export PATH=$PATH:$(go env GOPATH)/bin
                     '';
                 plugins = [
                 {
