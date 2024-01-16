@@ -11,3 +11,8 @@ To install:
 ```bash
 ./result/sw/bin/darwin-rebuild switch --flake ".#shed"
 ```
+
+To update:
+```bash
+nix flake update . --extra-experimental-features 'nix-command flakes'
+```
