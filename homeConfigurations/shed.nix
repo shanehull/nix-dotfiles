@@ -110,6 +110,7 @@ homeModule = { config, lib, pkgs, ... }: {
                     "v" = "nvim";
                     "vim" = "nvim";
                     "cat" = "bat";
+                    "prettier" = "prettierd";
                 };
             };
         };
