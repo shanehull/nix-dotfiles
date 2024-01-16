@@ -7,6 +7,9 @@ homeModule = { config, lib, pkgs, ... }: {
         home = {
             stateVersion = "23.11";
             packages = [
+                # asdf manages tooling versions via ./.tool-versions
+                # we do not install any langs here
+                pkgs.asdf-vm
                 pkgs.fontconfig
                 (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
                 pkgs.git
@@ -28,15 +31,15 @@ homeModule = { config, lib, pkgs, ... }: {
                 pkgs.kubectl
                 pkgs.k9s
                 pkgs.terraform
+                pkgs.terraform-ls
+                pkgs.tflint
                 pkgs.wget
                 pkgs.hugo
                 pkgs.golangci-lint
                 pkgs.gnupg
                 pkgs.gawk
-                # asdf manages tooling versions via ./.tool-versions
-                # we do not install any langs here
-                pkgs.asdf-vm
                 pkgs.stylua
+                pkgs.prettierd
             ];
         };
         programs = {
