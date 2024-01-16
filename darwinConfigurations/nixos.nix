@@ -37,7 +37,10 @@ darwinModule = { config, lib, pkgs, ... }: {
         system = {
             stateVersion = 4;
             defaults = {
-                dock.autohide = true;
+                dock = {
+                    autohide = true;
+                    show-recents = false;
+                };
             };
         };
         environment = {
