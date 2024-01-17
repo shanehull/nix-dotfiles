@@ -52,7 +52,9 @@ darwinModule = { config, lib, pkgs, ... }: {
             enable = true;
             onActivation.autoUpdate = true;
             casks = [ "warp" "multipass" ];
+            brews = [ "wrangler" ];
         };
+        security.pam.enableSudoTouchIdAuth = true;
     };
 };
 in

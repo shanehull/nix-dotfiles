@@ -23,7 +23,6 @@ homeModule = { config, lib, pkgs, ... }: {
                 pkgs.thefuck
                 pkgs.warp-terminal
                 pkgs.neovim
-                pkgs.wrangler
                 pkgs.fd
                 pkgs.ripgrep
                 pkgs.jq
