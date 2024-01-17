@@ -30,6 +30,7 @@ homeModule = { config, lib, pkgs, ... }: {
                 pkgs.yq
                 pkgs.kubectl
                 pkgs.k9s
+                pkgs.kubernetes-helm
                 pkgs.terraform
                 pkgs.terraform-ls
                 pkgs.tflint
@@ -40,6 +41,7 @@ homeModule = { config, lib, pkgs, ... }: {
                 pkgs.gawk
                 pkgs.stylua
                 pkgs.prettierd
+                pkgs.eslint_d
             ];
         };
         programs = {
