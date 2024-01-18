@@ -14,6 +14,7 @@ homeModule = { config, lib, pkgs, ... }: {
                 (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
                 pkgs.git
                 pkgs.bat
+                pkgs.tree
                 pkgs.eza
                 pkgs.fzf
                 pkgs.zsh
