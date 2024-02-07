@@ -20,6 +20,7 @@
     owner = "shanehull";
     sha256 = "sha256-z40mqq72FujTR2A48A6LCtV6mykKdwYMqPlJ43dAsBI=";
   };
+
   homeModule = {
     config,
     lib,
@@ -44,40 +45,48 @@
           fontconfig
           (nerdfonts.override {fonts = ["Hack"];})
           git
+
+          # cli tools
           bat
           tree
           eza
           fzf
+          fd
+          gawk
+          thefuck
+          ripgrep
+          jq
+          yq
+          wget
+
+          # zsh and plugins
           zsh
           zsh-syntax-highlighting
           zsh-autosuggestions
           zsh-powerlevel10k
-          thefuck
+
+          # terminal and editor
           warp-terminal
           neovim
-          ollama
-          fd
-          ripgrep
-          jq
-          yq
-          kubectl
+
+          # k8s tools
           k9s
-          kubernetes-helm
-          terraform
+
+          # language tools
           terraform-ls
           tflint
-          wget
-          hugo
           gopls
           golangci-lint
-          gnupg
-          gawk
           stylua
           prettierd
           eslint_d
           pandoc
           statix
           alejandra
+
+          # other
+          gnupg
+          ollama
         ];
       };
       programs = {
@@ -154,7 +163,7 @@
             "ccat" = "bat --plain";
             "brain" = "cd $SECOND_BRAIN";
             "zet" = "shed zet";
-            "checkcert" = "shed checkcert";
+            "checkcrt" = "shed checkcrt";
           };
         };
       };
@@ -163,14 +172,11 @@
   nixosModule = {...}: {
     home-manager.users.shane = homeModule;
   };
-in (
-  (
-    inputs.home-manager.lib.homeManagerConfiguration {
-      modules = [
-        homeModule
-      ];
-      pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
-    }
-  )
+in
+  inputs.home-manager.lib.homeManagerConfiguration {
+    modules = [
+      homeModule
+    ];
+    pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
+  }
   // {inherit nixosModule;}
-)
