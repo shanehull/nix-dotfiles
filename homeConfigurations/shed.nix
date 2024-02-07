@@ -6,42 +6,45 @@ homeModule = { config, lib, pkgs, ... }: {
         fonts.fontconfig.enable = true;
         home = {
             stateVersion = "23.11";
-            packages = [
+            packages = with pkgs; [
                 # asdf manages tooling versions via ./.tool-versions
                 # we do not install any langs here
-                pkgs.asdf-vm
-                pkgs.fontconfig
-                (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
-                pkgs.git
-                pkgs.bat
-                pkgs.tree
-                pkgs.eza
-                pkgs.fzf
-                pkgs.zsh
-                pkgs.zsh-syntax-highlighting
-                pkgs.zsh-autosuggestions
-                pkgs.zsh-powerlevel10k
-                pkgs.thefuck
-                pkgs.warp-terminal
-                pkgs.neovim
-                pkgs.fd
-                pkgs.ripgrep
-                pkgs.jq
-                pkgs.yq
-                pkgs.kubectl
-                pkgs.k9s
-                pkgs.kubernetes-helm
-                pkgs.terraform
-                pkgs.terraform-ls
-                pkgs.tflint
-                pkgs.wget
-                pkgs.hugo
-                pkgs.golangci-lint
-                pkgs.gnupg
-                pkgs.gawk
-                pkgs.stylua
-                pkgs.prettierd
-                pkgs.eslint_d
+                asdf-vm
+                fontconfig
+                (nerdfonts.override { fonts = [ "Hack" ]; })
+                git
+                bat
+                tree
+                eza
+                fzf
+                zsh
+                zsh-syntax-highlighting
+                zsh-autosuggestions
+                zsh-powerlevel10k
+                thefuck
+                warp-terminal
+                neovim
+                ollama
+                fd
+                ripgrep
+                jq
+                yq
+                kubectl
+                k9s
+                kubernetes-helm
+                terraform
+                terraform-ls
+                tflint
+                wget
+                hugo
+                gopls
+                golangci-lint
+                gnupg
+                gawk
+                stylua
+                prettierd
+                eslint_d
+                pandoc
             ];
         };
         programs = {
@@ -88,6 +91,9 @@ homeModule = { config, lib, pkgs, ... }: {
 
                     # go path
                     export PATH=$PATH:$(go env GOPATH)/bin
+
+                    # second brain dir
+                    export SECOND_BRAIN=$HOME/secondbrain
                     '';
                 plugins = [
                 {
@@ -112,6 +118,10 @@ homeModule = { config, lib, pkgs, ... }: {
                     "v" = "nvim";
                     "vim" = "nvim";
                     "cat" = "bat";
+                    "ccat" = "bat --plain";
+                    "brain" = "cd $SECOND_BRAIN";
+                    "zet" = "shed zet"
+                    "checkcert" = "shed checkcert"
                 };
             };
         };
@@ -125,7 +135,7 @@ in
  (
   inputs.home-manager.lib.homeManagerConfiguration {
   modules = [
-  homeModule
+    homeModule
   ];
   pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
   }
