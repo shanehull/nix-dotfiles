@@ -120,8 +120,8 @@ homeModule = { config, lib, pkgs, ... }: {
                     "cat" = "bat";
                     "ccat" = "bat --plain";
                     "brain" = "cd $SECOND_BRAIN";
-                    "zet" = "shed zet"
-                    "checkcert" = "shed checkcert"
+                    "zet" = "shed zet";
+                    "checkcert" = "shed checkcert";
                 };
             };
         };
