@@ -77,6 +77,7 @@
           tflint
           gopls
           gotools
+          golines
           golangci-lint
           stylua
           prettierd
