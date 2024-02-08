@@ -18,7 +18,7 @@
     version = "latest";
     repo = "shed";
     owner = "shanehull";
-    sha256 = "sha256-z40mqq72FujTR2A48A6LCtV6mykKdwYMqPlJ43dAsBI=";
+    sha256 = "sha256-LeiD7MamIMUdgJh4YfQJT4yDrMnxxrgPh4j06JB8L0A=";
   };
 
   homeModule = {
@@ -76,6 +76,7 @@
           terraform-ls
           tflint
           gopls
+          gotools
           golangci-lint
           stylua
           prettierd
