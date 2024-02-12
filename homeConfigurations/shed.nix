@@ -58,6 +58,7 @@
           jq
           yq
           wget
+          htop
 
           # zsh and plugins
           zsh
@@ -79,6 +80,7 @@
           gotools
           golines
           golangci-lint
+          air
           stylua
           prettierd
           eslint_d
