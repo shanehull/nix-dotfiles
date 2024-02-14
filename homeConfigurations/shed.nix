@@ -15,10 +15,10 @@
   shed = makeGitHubReleasePackage {
     pname = "shed";
     fname = "shed-darwin-arm64";
-    version = "latest";
+    version = "v0.0.3";
     repo = "shed";
     owner = "shanehull";
-    sha256 = "sha256-LeiD7MamIMUdgJh4YfQJT4yDrMnxxrgPh4j06JB8L0A=";
+    sha256 = "sha256-McEzuLE6+xKwNb5PtXrLVb0GyH1hRQSr5yPLvm9WKzQ=";
   };
 
   homeModule = {
@@ -84,7 +84,6 @@
           stylua
           prettierd
           eslint_d
-          pandoc
           statix
           alejandra
 

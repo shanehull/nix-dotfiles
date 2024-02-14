@@ -13,7 +13,7 @@ pkgs.stdenv.mkDerivation rec {
     url =
       if version == "latest"
       then "https://github.com/${owner}/${repo}/releases/latest/download/${fname}"
-      else "https://github.com/${owner}/${repo}/releases/download/v${version}/${fname}";
+      else "https://github.com/${owner}/${repo}/releases/download/${version}/${fname}";
     inherit sha256;
   };
 
