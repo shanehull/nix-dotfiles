@@ -72,6 +72,7 @@
 
           # k8s tools
           k9s
+          helm-docs
 
           # language tools
           terraform-ls
@@ -86,6 +87,7 @@
           eslint_d
           statix
           alejandra
+          luajitPackages.luacheck
 
           # other
           gnupg
