@@ -14,5 +14,5 @@ To install:
 
 To update:
 ```bash
-nix flake update --flake . --extra-experimental-features 'nix-command flakes'
+nix flake update . --extra-experimental-features 'nix-command flakes'
 ```
