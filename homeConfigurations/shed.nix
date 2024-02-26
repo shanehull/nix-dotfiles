@@ -87,7 +87,6 @@
           eslint_d
           statix
           alejandra
-          luajitPackages.luacheck
 
           # other
           gnupg
